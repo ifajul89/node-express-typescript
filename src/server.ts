@@ -1,18 +1,19 @@
 import mongoose from 'mongoose'
 import app from './app'
-import dotenv from './config'
+import config from './config'
 
 async function server() {
   try {
-    await mongoose.connect('')
-    app.listen(5000, () => {
-      console.log('Server Running')
+    // here mongoose has been connected
+    await mongoose.connect(config.database_url as string)
+    app.listen(config.port, () => {
+      console.log(`Server Running on port ${config.port}`)
     })
   } catch (error) {
     console.error(error)
   }
 }
 
-console.log(dotenv)
+// console.log(config.database_url)
 
 server()
