@@ -16,6 +16,8 @@ const userSchema = new Schema({
   photo: String,
   role: {
     type: String,
+    // by enum we are defining only these will be supported
+    enum: ['user', 'amdin'],
     required: true,
   },
   userStatus: {
