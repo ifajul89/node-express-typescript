@@ -1,3 +1,5 @@
+// this file does the work (funcitons) within controller
+
 import { IUser } from './user.interface'
 import User from './user.model'
 
@@ -6,6 +8,12 @@ const createUser = async (payload: IUser): Promise<IUser> => {
   return result
 }
 
+const getUser = async () => {
+  const result = await User.find()
+  return result
+}
+
 export const userService = {
   createUser,
+  getUser,
 }
