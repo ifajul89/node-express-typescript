@@ -10,6 +10,7 @@ const createUser = async (req: Request, res: Response) => {
     const result = await User.create(payload)
 
     res.json({
+      status: true,
       message: 'User Created Successfully',
       data: result,
     })
