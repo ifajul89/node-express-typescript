@@ -33,16 +33,19 @@ const userSchema = new Schema<IUser>({
     // by enum we are defining only these will be supported
     enum: ['user', 'amdin'],
     required: true,
+    // defining the default role as user
+    default: 'user',
   },
   userStatus: {
     type: String,
-    //we can also specify enum with this sysntax
+    //we can also specify enum with this syntax
     enum: {
       values: ['active', 'inactive'],
       // also in mongoose if we add {VALUE} into the message we can see the value that has been given in the output
       message: '{VALUE} is invalid, please provide a valid activity status',
     },
     required: true,
+    default: 'active',
   },
 })
 
